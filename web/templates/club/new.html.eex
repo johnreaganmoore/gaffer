@@ -1,0 +1,31 @@
+<h1>Create Club</h1>
+
+<%= form_for @changeset, club_path(@conn, :create), fn f -> %>
+  <%= if f.errors != [] do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below:</p>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <label>Name</label>
+    <%= text_input f, :name, class: "form-control" %>
+    <%= error_tag f, :name %>
+  </div>
+
+  <div class="form-group">
+    <label>Color</label>
+    <%= text_input f, :color, class: "form-control" %>
+    <%= error_tag f, :color %>
+  </div>
+
+  <div class="form-group">
+    <label>Logo</label>
+    <%= text_input f, :logo, class: "form-control" %>
+    <%= error_tag f, :logo %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Create Club", class: "btn btn-primary" %>
+  </div>
+<% end %>

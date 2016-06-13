@@ -1,0 +1,14 @@
+<h2>This is where clubs go</h2>
+<%= for club <- @clubs do %>
+    <div class="club">
+      <h2 class="club-name">
+        <%= club.name %>
+      </h2>
+      <p>
+        <%= club.logo %>
+      </p>
+      <p>
+        <%= club.color %>
+      </p>
+    </div>
+<% end %>
